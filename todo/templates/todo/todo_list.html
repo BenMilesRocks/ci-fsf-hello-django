@@ -25,6 +25,12 @@
                 {% endif %}
             </td>
         </tr>
+        {% empty %}
+        <tr>
+            <td>
+                No items on your To Do list!!!
+            </td>
+        </tr>
     {% endfor %}
     </table>
 
