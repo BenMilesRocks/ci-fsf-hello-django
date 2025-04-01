@@ -19,11 +19,16 @@ def add_item(request):
     context = {
         'form' : form
     }
-    
+
     if request.method == 'POST':
         form = ItemForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('get_todo_list')
-    
+
     return render(request, 'todo/add_item.html', context)
+
+def edit_item(request, item_id):
+    '''Edit item on To Do list'''
+
+    return render(request, 'todo/edit_item.html')

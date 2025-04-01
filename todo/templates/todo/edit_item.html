@@ -6,14 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add To Do Item</h1>
+    <h1>Edit To Do Item</h1>
 
-    <form method="post" action="add">
+    <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-                <button type="submit">Add Task</button>
+                <button type="submit">Update Task</button>
             </p>
         </div>
     </form>
