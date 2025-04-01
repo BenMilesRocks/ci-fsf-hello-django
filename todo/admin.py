@@ -1,3 +1,4 @@
+'''Import Django Admin and Models'''
 from django.contrib import admin
 from .models import Item
 
