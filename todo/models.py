@@ -1,4 +1,4 @@
-'''Import base models class'''
+'''App class models'''
 from django.db import models
 
 # Create your models here.

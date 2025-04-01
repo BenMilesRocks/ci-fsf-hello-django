@@ -1,4 +1,4 @@
-'''Import Django Shortcuts'''
+'''Render HTML pages & handle form requests'''
 from django.shortcuts import render, redirect
 from .models import Item
 # Create your views here.
