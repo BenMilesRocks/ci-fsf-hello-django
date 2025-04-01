@@ -8,7 +8,28 @@
 <body>
     <h1>Add To Do Item</h1>
 
-    
+    <form method="post" action="add">
+        <div>
+            <p>
+                <label for="id_name">Enter Task Name: </label>
+                <input type="text" name="item_name" id="id_name"> 
+            </p>
+        </div>
+        <div>
+            <p>
+                <label for="id_done">Task Complete?: </label>
+                <select id="id_done" name="item_done">
+                    <option value="True">Completed</option>
+                    <option value="False" selected>Incomplete</option>
+                </select>
+            </p>
+        </div>
+        <div>
+            <p>
+                <button type="submit">Add Task</button>
+            </p>
+        </div>
+    </form>
 
 </body>
 </html>
