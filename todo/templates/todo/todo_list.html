@@ -11,12 +11,19 @@
     <table>
         <tr>
             <td><strong>Task Name</strong></td>
-            <td><strong>Completed?</strong></td>
         </tr>
     {% for item in items %}
         <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.done }}</td>
+            <td>
+                {% if item.done == True %}
+                <s>
+                {% endif %}
+                {{ item.name }}
+
+                {% if item.done == True %}
+                </s>
+                {% endif %}
+            </td>
         </tr>
     {% endfor %}
     </table>
