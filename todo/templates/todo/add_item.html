@@ -9,6 +9,7 @@
     <h1>Add To Do Item</h1>
 
     <form method="post" action="add">
+        {% csrf_token %}
         <div>
             <p>
                 <label for="id_name">Enter Task Name: </label>
