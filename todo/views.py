@@ -1,7 +1,7 @@
 '''Render HTML pages & handle form requests'''
 from django.shortcuts import render, redirect
 from .models import Item
-# Create your views here.
+from .forms import ItemForm
 
 
 def get_todo_list(request):
@@ -15,10 +15,15 @@ def get_todo_list(request):
 
 def add_item(request):
     '''Add item to To Do list'''
+    form = ItemForm()
+    context = {
+        'form' : form
+    }
+    
     if request.method == 'POST':
-        name = request.POST.get('item_name') #pylint: disable=undefined-variable
-        done = request.POST.get('item_done') #pylint: disable=undefined-variable
-        Item.objects.create(name = name, done = done) #pylint: disable=no-member
-
-        return redirect('get_todo_list')
-    return render(request, 'todo/add_item.html')
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('get_todo_list')
+    
+    return render(request, 'todo/add_item.html', context)
