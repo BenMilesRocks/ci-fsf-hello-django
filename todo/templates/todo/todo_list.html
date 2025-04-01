@@ -27,8 +27,12 @@
             <td>
                 <a href="/edit/{{ item.id }}">
                     <button >Edit Task</button>
-                </a>
-                
+                </a>                
+            </td>
+            <td>
+                <a href="/toggle/{{ item.id }}">
+                    <button >Toggle Complete</button>
+                </a>                
             </td>
         </tr>
         {% empty %}

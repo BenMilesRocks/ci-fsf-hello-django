@@ -41,5 +41,12 @@ def edit_item(request, item_id):
         if form.is_valid():
             form.save()
             return redirect('get_todo_list')
-        
+
     return render(request, 'todo/edit_item.html', context)
+
+def toggle_item(request, item_id): #pylint: disable=unused-argument
+    '''Toggle DONE status'''
+    item = get_object_or_404(Item, id=item_id)
+    item.done = not item.done
+    item.save()
+    return redirect('get_todo_list')
