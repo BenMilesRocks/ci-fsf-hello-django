@@ -15,12 +15,12 @@
     {% for item in items %}
         <tr>
             <td>
-                {% if item.done == True %}
+                {% if item.done %}
                 <s>
                 {% endif %}
                 {{ item.name }}
 
-                {% if item.done == True %}
+                {% if item.done %}
                 </s>
                 {% endif %}
             </td>
