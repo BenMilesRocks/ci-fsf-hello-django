@@ -45,3 +45,11 @@ class TestViews(TestCase):
         self.assertRedirects(response, '/')
         updated_item = Item.objects.get(id=item.id) #pylint: disable=E1101
         self.assertFalse(updated_item.done)
+
+    def test_can_edit_item(self):
+        '''Test edit_item actually changes item details'''
+        item = Item.objects.create(name='Test Item') #pylint: disable=E1101
+        response = self.client.post(f'/edit/{item.id}', {'name':'Updated Name'})
+        self.assertRedirects(response, '/')
+        updated_item = Item.objects.get(id=item.id) #pylint: disable=E1101
+        self.assertEqual(updated_item.name, 'Updated Name')
